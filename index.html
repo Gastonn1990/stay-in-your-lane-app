@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07110b">
+  <meta name="description" content="Stay In Your Lane Radio — live radio, music, videos, and podcasts.">
+  <title>Stay In Your Lane Radio</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Stay In Your Lane home">
+      <span class="brand-mark">SIYL<span>✦</span></span>
+      <span class="brand-name">STAY IN YOUR LANE<small>WORLDWIDE RADIO</small></span>
+    </a>
+    <button class="install-btn" id="installBtn" hidden>Install app</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="flag-stripe"><i></i><i></i><i></i></div>
+      <p class="eyebrow"><span class="live-dot"></span> YOUR SOUND. YOUR LANE.</p>
+      <h1>Turn it up.<br><em>Stay in your lane.</em></h1>
+      <p class="hero-copy">Music, videos, and conversations from around the world — with Jamaican energy.</p>
+      <div class="hero-actions">
+        <button class="primary-btn" data-tab-target="radio">▶ Listen live</button>
+        <button class="secondary-btn" data-tab-target="videos">Explore videos</button>
+      </div>
+      <div class="equalizer" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    </section>
+
+    <nav class="tabs" aria-label="App sections">
+      <button class="tab active" data-tab="radio">◉ <span>Live Radio</span></button>
+      <button class="tab" data-tab="music">♫ <span>Music</span></button>
+      <button class="tab" data-tab="videos">▣ <span>Videos</span></button>
+      <button class="tab" data-tab="podcasts">🎙 <span>Podcasts</span></button>
+    </nav>
+
+    <section class="panel active" id="panel-radio">
+      <div class="section-heading"><div><p class="eyebrow">ON AIR</p><h2>Live Radio</h2></div><span class="pill"><span class="live-dot"></span> LIVE PLAYER</span></div>
+      <div class="player-card">
+        <div class="cover-art"><div class="cover-ring">SIYL</div><span>WORLDWIDE RADIO</span></div>
+        <div class="player-info"><p class="eyebrow">STAY IN YOUR LANE</p><h3>Live from your lane</h3><p class="muted" id="radioStatus">Add your public stream URL in app.js to go live.</p>
+          <audio id="radioPlayer" controls preload="none"></audio>
+          <div class="player-note">When your stream is online, press play to listen.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-music">
+      <div class="section-heading"><div><p class="eyebrow">YOUR LIBRARY</p><h2>Music</h2></div></div>
+      <div class="info-banner">Choose audio files from your device to play them here. Files are not uploaded or shared.</div>
+      <label class="upload-btn">＋ Add music files <input id="musicFiles" type="file" accept="audio/*" multiple></label>
+      <div class="track-list" id="trackList"><div class="empty-state">♫<h3>Your playlist starts here</h3><p>Add songs from your device to create a playlist.</p></div></div>
+      <div class="local-player"><strong id="localTrackName">Nothing playing yet</strong><audio id="localPlayer" controls></audio></div>
+    </section>
+
+    <section class="panel" id="panel-videos">
+      <div class="section-heading"><div><p class="eyebrow">WATCH</p><h2>Music Videos</h2></div></div>
+      <div class="info-banner">Add a public YouTube video link to play it here. Only use videos you have permission to share.</div>
+      <form id="videoForm" class="add-form"><input id="videoUrl" type="url" placeholder="Paste a YouTube video URL" aria-label="YouTube video URL" required><button class="primary-btn" type="submit">Add video</button></form>
+      <div id="videoList" class="video-grid"><div class="empty-state">▣<h3>Make it visual</h3><p>Add a YouTube link to start your video lineup.</p></div></div>
+    </section>
+
+    <section class="panel" id="panel-podcasts">
+      <div class="section-heading"><div><p class="eyebrow">REAL TALK</p><h2>Stay In Your Lane Podcast</h2></div></div>
+      <div class="podcast-feature"><div class="mic-icon">🎙</div><div><p class="eyebrow">YOUR VOICE. YOUR STORY.</p><h3>Conversations that move you.</h3><p class="muted">Add a podcast episode using an audio file below, or connect your public episode feed when you're ready.</p></div></div>
+      <label class="upload-btn">＋ Add podcast episode <input id="podcastFiles" type="file" accept="audio/*" multiple></label>
+      <div id="podcastList" class="track-list"><div class="empty-state">🎙<h3>No episodes yet</h3><p>Your episodes will appear here after you add audio files.</p></div></div>
+    </section>
+
+    <section class="about-strip">
+      <span class="star">✦</span><div><h3>One world. One sound.</h3><p>Independent music, culture, and conversation — Stay In Your Lane.</p></div><span class="star">✦</span>
+    </section>
+  </main>
+  <footer><div class="footer-brand">STAY IN YOUR LANE <span>RADIO</span></div><p>Made with Jamaican energy 🇯🇲</p><small>Use music and videos you own or are authorized to stream.</small></footer>
+  <script src="app.js"></script>
+</body>
+</html>
